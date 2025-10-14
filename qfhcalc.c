@@ -64,3 +64,12 @@ double df(double diam)
 		i = MAXINTV;
 	return tab[i] + (tab[i + 1] - tab[i]) * (diam - i);
 }
+
+void calc(double f, double wd, double wr, double r, double t, double nw)
+{
+	double wl = 300000.0 / f;
+	double wdeff = (wd > MAXINTV) ? MAXINTV : wd;
+	double wlc = wl * dl(wdeff);
+	double bc = 2 * wr - M_PI * wr / 2.0;
+	double od = 0.0088 * wlc;
+
