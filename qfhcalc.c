@@ -46,11 +46,21 @@ double dl(double diam)
 		i = 0;
 	if (i >= MAXINTV+1)
 		i = MAXINTV;
-	return tab[i] + (tab[i+1] - tab[i]) * (diam - i);
+	return tab[i] + (tab[i + 1] - tab[i]) * (diam - i);
 }
 
+/* temporary solution */
+double df(double diam)
+{
+	double tab[] = {
+		1.013, 1.014, 1.015, 1.016, 1.017, 1.018, 1.020, 1.022,
+		1.025, 1.027, 1.030, 1.033, 1.036, 1.041, 1.044, 1.049, 1.054
+	};
 
-
-	
-	
-	
+	int i = (int)diam;
+	if (i < 0)
+		i = 0;
+	if (i >= MAXINTV+1)
+		i = MAXINTV;
+	return tab[i] + (tab[i + 1] - tab[i]) * (diam - i);
+}
